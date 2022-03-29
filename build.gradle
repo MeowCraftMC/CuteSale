@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group = 'al.yn'
@@ -46,6 +46,9 @@ dependencies {
 
     // qyl: There are already some wheels, why code it twice.
 //    compileOnly group: 'cx.rain', name: 'Qore', version: '-SNAPSHOT', changing: true
+    compileOnly ('al.yn:DriedFish:33afb11f9a') {
+        changing = true
+    }
 
     compileOnly 'org.spigotmc:plugin-annotations:1.2.3-SNAPSHOT'
     annotationProcessor 'org.spigotmc:plugin-annotations:1.2.3-SNAPSHOT'
@@ -61,7 +64,6 @@ dependencies {
 
 shadowJar {
     dependencies {
-        include dependency('com.electronwill.night-config:toml:3.6.5')
     }
     relocate 'com', 'libraries.com'
 }
