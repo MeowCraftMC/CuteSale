@@ -1,6 +1,7 @@
 package al.yn.cutesale;
 
 import al.yn.cutesale.data.Config;
+import al.yn.cutesale.data.Data;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.java.annotation.dependency.Dependency;
 import org.bukkit.plugin.java.annotation.dependency.DependsOn;
@@ -19,6 +20,7 @@ public final class CuteSale extends JavaPlugin {
     public static CuteSale INSTANCE = null;
 
     private Config config = new Config();
+    private Data data = new Data();
 
     public CuteSale() {
         INSTANCE = this;
@@ -27,6 +29,10 @@ public final class CuteSale extends JavaPlugin {
     @NotNull
     public Config getBoardConfig() {
         return config;
+    }
+
+    public Data getData() {
+        return data;
     }
 
     @Override
